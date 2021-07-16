@@ -155,8 +155,8 @@ class Products with ChangeNotifier {
   void deleteProduct(String id) {
     final url =
         'https://firsthttptry-default-rtdb.firebaseio.com/products/$id.json';
-    final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
-    final existingProduct = _items[existingProductIndex];
+    var existingProductIndex = _items.indexWhere((prod) => prod.id == id);
+    var existingProduct = _items[existingProductIndex];
     http.delete(url).then((response) {
       if (response.statusCode >= 400) {
         
